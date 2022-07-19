@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>
+            Получить информацию о наличие продукта
+        </title>
+    </head>
+    <body>
+      <referenceContainer name="content">
+            <block class="Samohina\DataAcquisition\Block\ProductStock"
+                   name="DataAcquisition.product.stock."
+                   template="Samohina_DataAcquisition::productStock.phtml" />
+        </referenceContainer>
+    </body>
+</page>

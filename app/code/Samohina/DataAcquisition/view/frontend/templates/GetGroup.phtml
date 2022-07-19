@@ -1,0 +1,9 @@
+<?php
+/** @var \Samohina\DataAcquisition\Block\GetGroup $block */
+?>
+
+<?php $orders = $block->getAllGroup();
+?>
+<?php foreach ($orders as $order): ?>
+    <div>Id:<?= $order->getId(); ?>, Код группы: <?= $order->getCode(); ?></div>
+ <?php endforeach; ?>

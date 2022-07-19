@@ -1,0 +1,16 @@
+<?php
+/** @var \Samohina\DataAcquisition\Block\ProductStock $block */
+?>
+<?php
+$_productStock = $block->getStockItem(1);
+?>
+<p>Qty(): <?= $_productStock->getQty(); ?> </p>
+<p>MinQty(): <?= $_productStock->getMinQty();; ?> </p>
+<p>MinSaleQty(): <?= $_productStock->getMinSaleQty(); ?> </p>
+<p>MaxSaleQty(): <?= $_productStock->getMaxSaleQty(); ?> </p>
+<p>IsInStock(): <?= $_productStock->getIsInStock(); ?> </p>
+
+
+
+
+

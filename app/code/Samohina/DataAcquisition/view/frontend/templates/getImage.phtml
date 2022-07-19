@@ -1,0 +1,19 @@
+<?php
+/** @var \Samohina\DataAcquisition\Block\GetImage $block */
+?>
+<?php
+$id = 1;
+$_product = $block->getProductById($id);
+
+echo __('getWidth: ') . $block->getImageWidth($_product, 'product_small_image') . '<br /> <br />';
+echo __('getHeight: ') . $block->getImageHeight($_product, 'product_small_image') . '<br /> <br />';
+echo __('getUrl: ') . $block->getImageUrl($_product, 'product_small_image') . '<br /> <br />';
+?>
+
+
+
+
+
+
+
+

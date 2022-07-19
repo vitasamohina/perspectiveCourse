@@ -1,0 +1,27 @@
+<?php
+/** @var \Samohina\DataAcquisition\Block\getOrders $block */
+?>
+<h3>Список заказов со статусом pending </h3>
+<table>
+    <tr>
+        <th>Id order</th>
+        <th>Статус заказа</th>
+        <th>Дата заказа</th>
+        <th>Имя покупателя</th>
+        <th>Сумма покипки</th>
+        <th>Способ доставки</th>
+    </tr><?php foreach ($block->getOrdersWithAttibute() as $getOrders): ?>
+        <tr>
+            <td><?= $getOrders->getEntityId(); ?></td>
+            <td><?= $getOrders->getStatus(); ?></td>
+            <td><?= $getOrders->getCreatedAt(); ?></td>
+            <td><?= $getOrders->getCustomerFirstname(); ?></td>
+            <td><?= $getOrders->getGrandTotal(); ?></td>
+            <td><?= $getOrders->getShippingMethod(); ?></td>
+        </tr>
+    <?php endforeach; ?>
+</table>
+
+
+
+

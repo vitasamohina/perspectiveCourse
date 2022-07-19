@@ -1,0 +1,28 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+
+$viewModel = $block->getViewModel();
+$products = $viewModel->getProducts();
+?>
+<h2><?= __('Get SKU, Name and Price from category Jackets, where Price from 50$ to 60$'); ?></h2>
+<table style="border: 1px solid #ccc; ">
+    <tr style="background-color: #ccc">
+        <td>
+            <?=  __('Name: ') ?>
+        </td>
+        <td>
+            <?=  __('Price: ') ?>
+        </td>
+        <td>
+            <?=  __('Sku: ') ?>
+        </td>
+    </tr>
+    <?php foreach ($products as $product) : ?>
+    <tr style="border: 1px solid #ccc; " >
+        <td><?= $product->getName() ?></td>
+        <td><?= $product->getPrice() ?></td>
+        <td><?= $product->getSku() ?></td>
+    </tr>
+    <?php endforeach; ?>
+    </table>
+

@@ -1,0 +1,11 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+
+$viewModel = $block->getViewModel();
+$payments = $viewModel->getPaymentList();
+?>
+<h2><?= __('Payment Methods'); ?></h2>
+<?php
+foreach ($payments as $payment) {
+    echo $payment->getTitle().'<br>';
+}?>

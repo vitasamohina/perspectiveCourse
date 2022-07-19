@@ -1,0 +1,11 @@
+<?php
+/** @var \Samohina\DataAcquisition\Block\getCustomers $block */
+?>
+
+<?php foreach ($block->getCustomer() as $getCustomer): ?>
+    <h2><?= $getCustomer->getName(); ?> - <?= $getCustomer->getEmail(); ?> - data created: <?= $getCustomer->getCreatedAt(); ?></h2>
+   <?php endforeach; ?>
+
+
+
+

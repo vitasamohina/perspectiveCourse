@@ -1,0 +1,12 @@
+<?php
+/** @var \Samohina\DataAcquisition\Block\getCustomers2 $block */
+?>
+<?= __('All customers'); ?>
+<?php foreach ($block->getCustomers() as $customer): ?>
+    <h2><?= $customer->getFirstname(); ?> -  <?= $customer->getEmail(); ?></h2>
+<?php endforeach; ?>
+
+
+
+
+

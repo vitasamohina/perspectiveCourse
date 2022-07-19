@@ -1,0 +1,11 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+
+$viewModel = $block->getViewModel();
+$shippingMethods = $viewModel->getShippingtList();
+?>
+<h2><?= __('Shipping Methods'); ?></h2>
+<?php
+foreach ($shippingMethods as $shipping) {
+    echo $shipping->getId().'<br>';
+}?>
