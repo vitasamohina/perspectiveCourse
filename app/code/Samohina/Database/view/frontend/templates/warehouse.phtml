@@ -1,0 +1,62 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+
+$viewModel = $block->getViewModel();
+$specifiedWarehouse='Поляна';
+$warehouses = $viewModel->getWarehouses($specifiedWarehouse);
+$allWarehouses = $viewModel->getAllWarehouses();
+
+?>
+<h2><?= __('3.1 Получить полную коллекцию по созданной таблице'); ?></h2>
+<table style="border: 1px solid #ccc; ">
+    <tr style="background-color: #ccc">
+        <td>
+            <?=  __('Warehouse name: ') ?>
+        </td>
+        <td>
+            <?=  __('Id category: ') ?>
+        </td>
+        <td>
+            <?=  __('Id product: ') ?>
+        </td>
+        <td>
+            <?=  __('Qnt product: ') ?>
+        </td>
+        <td>
+            <?=  __('Data added product: ') ?>
+        </td>
+    </tr>
+    <?php foreach ($allWarehouses as $item) : ?>
+        <tr style="border: 1px solid #ccc; " >
+            <td><?= $item->getNameWar() ?></td>
+            <td><?= $item->getIdCat() ?></td>
+            <td><?= $item->getIdProd() ?></td>
+            <td><?= $item->getKolProd() ?></td>
+            <td><?= $item->getDataProd() ?></td>
+
+        </tr>
+    <?php endforeach; ?>
+</table>
+
+<h2><?= __('3.2 Коллекция имен, категорий продуктов и даты их появления для указанного склада (%1)', $specifiedWarehouse); ?></h2>
+<table style="border: 1px solid #ccc; ">
+    <tr style="background-color: #ccc">
+        <td>
+            <?=  __('Warehouse name: ') ?>
+        </td>
+        <td>
+            <?=  __('Id category: ') ?>
+        </td>
+        <td>
+            <?=  __('Data added product: ') ?>
+        </td>
+    </tr>
+    <?php foreach ($warehouses as $item) : ?>
+    <tr style="border: 1px solid #ccc; " >
+        <td><?= $item->getNameWar() ?></td>
+        <td><?= $item->getIdCat() ?></td>
+        <td><?= $item->getDataProd() ?></td>
+
+    </tr>
+    <?php endforeach; ?>
+</table>

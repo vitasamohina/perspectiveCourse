@@ -1,0 +1,22 @@
+<?php
+/** @var Magento\Catalog\Block\Product\View $block */
+
+$product_id = (int)$block->getRequest()->getParam('id');
+$viewModel = $block->getViewModel();
+$warehouses = $viewModel->getWarehouses($product_id);
+?>
+<table>
+    <tr style="border: 1px solid #ccc; background-color: #ccc; ">
+        <td>Название склада</td>
+        <td>Количество товаров на складе</td>
+        <td>Адрес склада</td>
+    </tr>
+    <?php foreach ($warehouses as $item) : ?>
+        <tr style="border: 1px solid #ccc; " >
+            <td><?= $item->getNameWar() ?></td>
+            <td><?= $item->getKolProd() ?></td>
+            <td><?= $item->getAddrWar() ?></td>
+        </tr>
+    <?php endforeach; ?>
+</table>
+
