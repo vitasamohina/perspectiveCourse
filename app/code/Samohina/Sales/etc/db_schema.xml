@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema
+/etc/schema.xsd">
+        <table name="samohina_sales" resource="default"
+           engine="innodb" comment="Sales">
+        <column xsi:type="smallint" name="id" unsigned="false"
+                nullable="false" identity="true" comment="ID"/>
+        <column xsi:type="varchar" name="product_name" nullable="false"
+                length="25" comment="Name"/>
+        <column xsi:type="smallint" name="qnt" comment="qnt"/>
+        <column xsi:type="date" name="date" nullable="false" comment="Date" />
+        <!--<column xsi:type="decimal" scale="2" precision="10" name="discount" nullable="false"
+                   comment="Discount" />-->
+        <column xsi:type="decimal" scale="2" precision="10" name="bonus" onCreate="migrateDataFrom(discount)" nullable="false"
+                   comment="Bonus" />
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+    </table>
+</schema>

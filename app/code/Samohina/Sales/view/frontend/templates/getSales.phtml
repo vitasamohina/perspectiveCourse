@@ -1,0 +1,37 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+
+$viewModel = $block->getViewModel();
+$filterName = 'Планшет Lenovo Tab P11 Wi';
+$sales = $viewModel->getSales($filterName);
+?>
+<h2><?= __('Вывести продажи по определенному названию товара (%1) и посчитать стоимость данной
+продажи', $filterName); ?></h2>
+<br>
+<table style="border: 1px solid #ccc; ">
+    <tr style="background-color: #ccc">
+        <td>
+            <?=  __('Id sales') ?>
+        </td>
+        <td>
+            <?=  __('Product name') ?>
+        </td>
+        <td>
+            <?=  __('Selling price (Total)') ?>
+        </td>
+    </tr>
+    <?php foreach ($sales as $sale) : ?>
+    <tr style="border: 1px solid #ccc; " >
+        <td><?= $sale->getId() ?></td>
+        <td><?= $sale->getProductName() ?></td>
+        <td>
+            <?php if($sale->getDate()==date("Y-m-d")){
+                echo $sale->getPrice()*$sale->getQnt()*(1-$sale->getBonus());
+            }else{
+                echo $sale->getPrice()*$sale->getQnt();
+            }  ?>
+        </td>
+    </tr>
+    <?php endforeach; ?>
+</table>
+

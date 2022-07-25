@@ -1,0 +1,14 @@
+{
+    "samohina_sales": {
+        "column": {
+            "id": true,
+            "product_name": true,
+            "qnt": true,
+            "date": true,
+            "discount": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}
