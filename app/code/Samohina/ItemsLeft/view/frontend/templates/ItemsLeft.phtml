@@ -1,0 +1,17 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+
+$viewModel = $block->getViewModel();
+$isEnable = $viewModel->getIsEnable();
+
+$productId = $block->getRequest()->getParam('id');
+$product=$viewModel->getProductById($productId);
+
+$productStockQty = $viewModel->getProductById($productId)->getquantityAndStockStatus()['qty'];
+
+$itemsLeft = $viewModel->getItemsLeft();
+?>
+<?php if ($isEnable && $itemsLeft >= $productStockQty) :?>
+<div style="padding: 15px; border: 2px solid red"><?= __('Remaining %1 units', $productStockQty); ?></div>
+<?php endif; ?>
+
