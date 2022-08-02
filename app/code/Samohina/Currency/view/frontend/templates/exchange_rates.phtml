@@ -1,0 +1,38 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+
+$viewModel = $block->getViewModel();
+$isEnable = $viewModel->getIsEnable();
+
+$productId = $block->getRequest()->getParam('id');
+$productPrice = $viewModel->getProductById($productId)->getPrice();
+
+$UAH_course = $viewModel->getExchangeRatesUAH();
+$RUB_course = $viewModel->getExchangeRatesRUB();
+$EURO_course = $viewModel->getExchangeRatesEURO();
+?>
+<?php if ($isEnable) :?>
+<table>
+    <?php if ($UAH_course['enable']) :?>
+        <tr><td>
+               Цена в UAH: <?= $UAH_course['rates']*$productPrice; ?>
+            </td>
+        </tr>
+    <?php endif; ?>
+    <?php if ($RUB_course['enable']) :?>
+    <tr>
+        <td>
+            Цена в RUB: <?= $RUB_course['rates']*$productPrice; ?>
+        </td>
+    </tr>
+    <?php endif; ?>
+    <?php if ($EURO_course['enable']) :?>
+    <tr>
+        <td>
+            Цена в EURO: <?= $EURO_course['rates']*$productPrice; ?>
+        </td>
+    </tr>
+    <?php endif; ?>
+</table>
+<?php endif; ?>
+
