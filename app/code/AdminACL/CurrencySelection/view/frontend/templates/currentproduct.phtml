@@ -1,0 +1,9 @@
+<?php
+
+/** @var \AdminACL\CurrencySelection\Block\Index $block */
+?>
+<?php if ($currentProduct = $block->getCurrentProduct()) : ?>
+    <h2><b><?= $block->getUahPrice(); ?></b></h2>
+    <h2><b><?= $block->getRubPrice(); ?></b></h2>
+    <h2><b><?= $block->getEuroPrice(); ?></b></h2>
+<?php endif ?>

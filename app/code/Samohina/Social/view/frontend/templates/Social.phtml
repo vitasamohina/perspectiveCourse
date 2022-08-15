@@ -1,0 +1,18 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+
+$viewModel = $block->getViewModel();
+
+$isEnable = $viewModel->getIsEnable();
+
+$socialPercent = $viewModel->getSocialPercent();
+
+$attribute_social=$viewModel->getSocialAttribute();
+
+$discontPrice = $viewModel->getSocialPrice();
+
+?>
+<?php if ($isEnable && $attribute_social && $discontPrice) :?>
+    <div style="padding: 15px; border: 2px solid red"><?= __('Discount for the social product %1 %. Discounted price %2', $socialPercent, $discontPrice); ?></div>
+<?php endif; ?>
+

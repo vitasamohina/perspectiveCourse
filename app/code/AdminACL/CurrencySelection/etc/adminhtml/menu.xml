@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="AdminACL_CurrencySelection::currencyselection" title="Currency Selection" module="AdminACL_CurrencySelection" sortOrder="51" resource="AdminACL_CurrencySelection::currencyselection"/>
+        <add id="AdminACL_CurrencySelection::post" title="Manage Posts" module="AdminACL_CurrencySelection" sortOrder="10" action="adminacl_currencyselection/post" resource="AdminACL_CurrencySelection::post" parent="AdminACL_CurrencySelection::currencyselection"/>
+        <add id="AdminACL_CurrencySelection::currency_configuration" title="Configuration" module="AdminACL_CurrencySelection" sortOrder="99" parent="AdminACL_CurrencySelection::currencyselection" 
+action="adminhtml/system_config/edit/section/currencyselection" resource="AdminACL_CurrencySelection::currencyselection_configuration"/>
+    </menu>
+</config>
