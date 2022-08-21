@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="samohina_airfreight" translate="label" sortOrder="10">
+            <label>Samohina Air Freight Only</label>
+        </tab>
+        <section id="samohina_airfreight" translate="label" sortOrder="130"
+                 showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Samohina Air Freight Only</label>
+            <tab>samohina_airfreight</tab>
+            <resource>Samohina_AirFreight::airfreight_config</resource>
+            <group id="general" translate="label" type="text"
+                   sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Configuration Air Freight Only</label>
+                <field id="enable" translate="label" type="select"
+                       sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Module Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="balloon_excess_product_weight" translate="label" type="text"
+                       sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Balloon - Excess product weight (kg)</label>
+                    <comment>KG</comment>
+                </field>
+                <field id="balloon_additional_payment" translate="label" type="text"
+                       sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Balloon - Additional payment for each extra kilogram</label>
+                    <comment>$/KG</comment>
+                </field>
+                <field id="charter_plane_excess_product_weight" translate="label" type="text"
+                       sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Charter plane - Excess product weight (kg)</label>
+                    <comment>KG</comment>
+                </field>
+                <field id="charter_plane_additional_payment" translate="label" type="text"
+                       sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Charter plane - Additional payment for each extra kilogram</label>
+                    <comment>$/KG</comment>
+                </field>
+                <field id="highspeed_plane_excess_product_weight" translate="label" type="text"
+                       sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Highspeed plane - Excess product weight (kg)</label>
+                    <comment>KG</comment>
+                </field>
+                <field id="highspeed_plane_additional_payment" translate="label" type="text"
+                       sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Highspeed plane - Additional payment for each extra kilogram</label>
+                    <comment>$/KG</comment>
+                </field>
+                <field id="spaceship_excess_product_weight" translate="label" type="text"
+                       sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Spaceship - Excess product weight (kg)</label>
+                    <comment>KG</comment>
+                </field>
+                <field id="spaceship_additional_payment" translate="label" type="text"
+                       sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Spaceship - Additional payment for each extra kilogram</label>
+                    <comment>$/KG</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

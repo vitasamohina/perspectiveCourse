@@ -1,0 +1,16 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+
+$viewModel = $block->getViewModel();
+
+$isEnable = $viewModel->getIsEnable();
+
+
+$sizeMargin = $viewModel->getSizeMargin();
+
+$productName = $viewModel->getProductName();
+?>
+<?php if ($isEnable && $sizeMargin) :?>
+    <div style="padding: 15px; border: 2px solid red"><?=  __('Freight %1 will incur an additional charge %2', $productName, $sizeMargin); ?></div>
+<?php  endif; ?>
+
