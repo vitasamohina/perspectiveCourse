@@ -1,0 +1,44 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+
+$viewModel = $block->getViewModel();
+
+$isEnable = $viewModel->getIsEnable();
+
+$basePrice = $viewModel->getBasePrice();
+$a=4;
+
+$tierPrice =  $viewModel->getTierPrice();
+
+$finalPrice =  $viewModel->getFinalPrice();
+
+$specialPrice =  $viewModel->getSpecialPrice();
+
+
+$rule = $viewModel->getCatalogRule();
+
+$b=1;
+
+?>
+<?php if ($isEnable): ?>
+    <div><?= __('Base Price') ?> <?= $basePrice ? $basePrice : '-'; ?></div>
+    <div><?= __('Special Price') ?> <?= $specialPrice ? $specialPrice :  '-'; ?></div>
+    <div><?= __('Final Price') ?> <?= $finalPrice ? $finalPrice : '-'; ?></div>
+    <div><?= __('Tier Price') ?>
+        <?php if ($tierPrice): ?> <?php foreach ($tierPrice as $tierPriceItem): ?>
+                <?= $tierPriceItem['price']; ?>
+            <?php endforeach ?>
+        <?php else:?>
+        -
+        <?php endif; ?>
+        </div>
+        <div><?= __('Catalog rule price') ?>
+        <?php if ($rule): ?><?php foreach ($rule as $ruleItem): ?>
+            <?= $ruleItem['action_amount']; ?>
+        <?php endforeach ?>
+        <?php else:?>
+            -
+        <?php endif; ?>
+    </div>
+
+<?php endif; ?>

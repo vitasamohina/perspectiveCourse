@@ -1,0 +1,31 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+
+$viewModel = $block->getViewModel();
+
+$endSpecialPrice = $viewModel->getEndSpecialPrice();
+
+$endSpecialPrice =  date("Y/m/d", strtotime($endSpecialPrice));
+
+$minAllTime = $viewModel->getMinEndTime();
+?>
+
+<div style="display: inline-block; padding: 15px; font-size: 20px; border: 15px solid dodgerblue" id="getting-started"></div>
+
+<script type="text/javascript">
+    require([
+        'jquery',
+        'Samohina_Countdown/js/jquery.countdown',
+    ],function ($){
+       /* $("#getting-started").countdown("<?= $endSpecialPrice;?>", function(event) {
+                $(this).text(
+                    event.strftime('%D days %H:%M:%S')
+                );
+        });*/
+      $("#getting-started").countdown("<?= $minAllTime; ?>", function(event) {
+            $(this).text(
+                event.strftime('%D days %H:%M:%S')
+            );
+        });
+    })
+</script>

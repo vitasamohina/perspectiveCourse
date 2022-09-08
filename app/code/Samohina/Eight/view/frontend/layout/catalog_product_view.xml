@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<page layout="1column"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="product.info.main">
+            <block
+                name="product.extra.prices"
+                template="Samohina_Eight::prices.phtml"
+                after="product.info.price" >
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Samohina\Eight\ViewModel\Prices</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>
