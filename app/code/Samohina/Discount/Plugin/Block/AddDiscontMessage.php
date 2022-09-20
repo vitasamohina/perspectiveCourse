@@ -110,7 +110,8 @@ class AddDiscontMessage
         \Magento\Theme\Block\Html\Title $subject, $result
     ) {
        // if (stripos($this->getPathInfo(), 'catalog/product/view') && $this->getIsEnable() && $this->belongToCategory() && $this->showMessageAboutEndSale()){
-        if (stripos($this->getPathInfo(), 'catalog/product/view') && $this->getIsEnable() && $this->belongToCategory() && $this->getEnableDiscount() && $this->belongToCustomerGroup()){
+        //if (stripos($this->getPathInfo(), 'catalog/product/view') && $this->getIsEnable() && $this->belongToCategory() && $this->getEnableDiscount() && $this->belongToCustomerGroup()){
+        if (stripos($this->getPathInfo(), 'catalog/product/view') && $this->getIsEnable() && $this->belongToCategory() && $this->getEnableDiscount()){
               return $result.$this->getInscriptionDiscounts();
         } else{
             return $result;

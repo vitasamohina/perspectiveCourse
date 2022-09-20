@@ -4,9 +4,9 @@
         <plugin name="addStringAfterName" type="Samohina\Discount\Plugin\Block\AddString" disabled="true"/>
     </type>
     <type name="Magento\Theme\Block\Html\Title">
-        <plugin name="addDiscountMessageAfterName" type="Samohina\Discount\Plugin\Block\AddDiscontMessage" disabled="true"/>
+        <plugin name="addDiscountMessageAfterName" type="Samohina\Discount\Plugin\Block\AddDiscontMessage" disabled="false"/>
     </type>
     <type name="Magento\Catalog\Model\Product">
-        <plugin name="changePrice" type="Samohina\Discount\Plugin\Model\ChangePrice" />
+        <plugin name="changePrice" type="Samohina\Discount\Plugin\Model\ChangePrice" disabled="true" />
     </type>
 </config>

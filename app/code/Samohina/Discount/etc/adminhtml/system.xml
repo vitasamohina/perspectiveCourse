@@ -29,7 +29,7 @@
                     <comment>Sales end date</comment>
                 </field>
                 <field id="enable_discount" translate="label" type="select" sortOrder="5" showInDefault="1" showInWebsite="0" showInStore="0">
-                    <label>Module Enable</label>
+                    <label>Cron Discont Enable</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
                 <field id="percent_discount" translate="label" type="text"

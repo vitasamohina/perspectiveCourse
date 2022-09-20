@@ -1,8 +1,17 @@
 <?xml version="1.0" ?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
-    <group id="default">
+    <group id="your_group_name">
         <job instance="Samohina\Discount\Cron\SaleForRandomProduct" method="execute" name="samohina_discount_cron">
-            <schedule>0/2 0 0 0 0</schedule>
+            <schedule>*/50 * * * *</schedule>
+        </job>
+        <job instance="Samohina\Discount\Cron\SaleForRandomProduct" method="SetDataOn" name="samohina_discount_cron3">
+            <schedule>*/50 * * * *</schedule>
+        </job>
+        <job instance="Samohina\Discount\Cron\SaleForRandomProduct" method="SetDataOff" name="samohina_discount_cron1">
+            <schedule>*/100 * * * *</schedule>
+        </job>
+        <job instance="Samohina\Discount\Cron\SaleForRandomProduct" method="cacheClear" name="samohina_discount_cron2">
+            <schedule>*/50 * * * *</schedule>
         </job>
     </group>
 </config>
