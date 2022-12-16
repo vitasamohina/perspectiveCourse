@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <samohina_custom_price>
+            <general>
+                <enable>1</enable>
+                <persent_custom_price>15</persent_custom_price>
+            </general>
+        </samohina_custom_price>
+    </default>
+</config>
