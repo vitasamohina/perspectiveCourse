@@ -1,0 +1,83 @@
+<?php
+/** @var $block Samohina\PurchaseOneClick\Block\Content */
+$product = $block->getProduct();
+?>
+<?php if ($product->isSaleable()): ?>
+    <div class="purchase-one-click">
+        <button title="<?php echo __('Buy in 1 click'); ?>" class="action primary one-click">
+            <span><?php echo __('Buy in 1 click'); ?></span>
+        </button>
+        <div id="purchase-form" class="purchase-form" style="display: none">
+            <form id="form-one-click-validate" action="<?php echo $block->getActionUrl() ?>" method="post">
+                <input type="hidden" name="product_id" value="<?php echo $product->getId(); ?>">
+                <div class="field required">
+                    <p>
+                        <label class="label" for="name">
+                            <span><?php echo __('Name') ?></span>
+                        </label>
+                        <div class="control">
+                            <input type="text" id="name" name="name" value="" title="<?php echo __('name') ?>" class="input-text" placeholder="name">
+                        </div>
+                    </p>
+                    <p>
+                        <label class="label" for="surname">
+                            <span><?php echo __('Surname') ?></span>
+                        </label>
+                        <div class="control">
+                            <input type="text" id="surname" name="surname" value="" title="<?php echo __('surname') ?>" class="input-text" placeholder="surname">
+                        </div>
+                    </p>
+                    <p>
+                        <label class="label" for="email">
+                            <span><?php echo __('Email') ?></span>
+                        </label>
+                        <div class="control">
+                            <input type="text" id="email" name="email" value="" title="<?php echo __('email') ?>" class="input-text required-entry" data-validate="{required:true}"
+                                   autocomplete="off" aria-required="true" placeholder="email">
+                        </div>
+                    </p>
+                    <p>
+                        <label class="label" for="telephone">
+                            <span><?php echo __('Telephone') ?></span>
+                        </label>
+                        <div class="control">
+                            <input type="text" id="telephone" name="telephone" value="" title="<?php echo __('Telephone') ?>" class="input-text" placeholder="(0__)___-__-__">
+                        </div>
+                    </p>
+                </div>
+                <div class="actions-toolbar">
+                    <div class="primary">
+                        <button type="submit" class="action submit primary" title="<?php echo __('Submit'); ?>"><span><?php echo __('Submit'); ?></span></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        require([
+            'jquery',
+            'mage/mage'
+        ], function ($) {
+            var dataForm = $('#form-one-click-validate');
+            var ignore = '';
+
+            dataForm.mage('validation', {
+                ignore: ignore ? ':hidden:not(' + ignore + ')' : ':hidden'
+            }).find('input:text').attr('autocomplete', 'off');
+
+        });
+    </script>
+    <script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "purchase_form": {
+                        "component": "Samohina_PurchaseOneClick/js/purchase_form"
+                    }
+                 }
+            }
+        }
+    }
+    </script>
+<?php endif; ?>
