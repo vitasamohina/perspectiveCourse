@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="checkout_item_price_renderers"/>
+    <body>
+        <referenceBlock class="Magento\Checkout\Block\Cart\Item\Renderer\Actions\Remove" name="checkout.cart.item.renderers.simple.actions.remove" template="Samohina_UpdateCartAjax::cart/item/renderer/actions/remove.phtml"/>
+        <referenceBlock class="Magento\Checkout\Block\Cart\Item\Renderer\Actions\Remove" name="checkout.cart.item.renderers.default.actions.remove" template="Samohina_UpdateCartAjax::cart/item/renderer/actions/remove.phtml"/>
+        <referenceBlock name="checkout.cart.item.renderers.default" template="Samohina_UpdateCartAjax::cart/item/default.phtml">
+            <arguments>
+                <argument name="view_model" xsi:type="object">Samohina\UpdateCartAjax\ViewModel\getOption</argument>
+            </arguments>
+        </referenceBlock>
+        <referenceBlock class="Samohina\UpdateCartAjax\Block\Cart\Item\Renderer" name="checkout.cart.item.renderers.simple" template="Samohina_UpdateCartAjax::cart/item/default.phtml">
+            <block class="Magento\Catalog\Block\Product\View\Options\Type\DefaultType" name="checkout.cart.item.renderers.simple.default" as="default" template="Magento_Catalog::product/view/options/type/default.phtml"/>
+            <block class="Magento\Catalog\Block\Product\View\Options\Type\Text" name="checkout.cart.item.renderers.simple.text" as="text" template="Magento_Catalog::product/view/options/type/text.phtml"/>
+            <block class="Magento\Catalog\Block\Product\View\Options\Type\File" name="checkout.cart.item.renderers.simple.file" as="file" template="Magento_Catalog::product/view/options/type/file.phtml"/>
+            <block class="Magento\Catalog\Block\Product\View\Options\Type\Select" name="checkout.cart.item.renderers.simple.select" as="select" template="Magento_Catalog::product/view/options/type/select.phtml"/>
+            <block class="Magento\Catalog\Block\Product\View\Options\Type\Date" name="checkout.cart.item.renderers.simple.date" as="date" template="Magento_Catalog::product/view/options/type/date.phtml"/>
+            <arguments>
+                <argument name="view_model" xsi:type="object">Samohina\UpdateCartAjax\ViewModel\getOption</argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>
