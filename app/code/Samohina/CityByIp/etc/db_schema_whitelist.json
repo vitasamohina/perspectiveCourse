@@ -1,0 +1,16 @@
+{
+    "novaposhta_city": {
+        "column": {
+            "city_id": true,
+            "ref": true,
+            "name_ua": true,
+            "name_ru": true,
+            "area": true,
+            "type_ua": true,
+            "type_ru": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

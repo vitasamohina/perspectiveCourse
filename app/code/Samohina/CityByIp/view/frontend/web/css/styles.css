@@ -1,0 +1,44 @@
+.geolocation{
+    cursor: pointer;
+    float: left;
+    margin-right: 39px;
+}
+.geolocation .icon {
+    line-height: 21px;
+    display: inline-block;
+    vertical-align: top;
+}
+.geolocation #ip {
+    font-family: 'Vodafone Rg',sans-serif;
+    line-height: 18px;
+    font-size: 1.6rem;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 6px;
+}
+.city-autocomplete ul:not(:empty) {
+    background: #ffffff;
+    border: 1px solid #c2c2c2;
+    border-top: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none none;
+
+}
+.city-autocomplete ul li {
+    border-top: 1px solid #e5e5e5;
+    cursor: pointer;
+    margin: 0;
+    padding: 5px 40px 5px 10px;
+    position: relative;
+    text-align: left;
+    white-space: normal;
+    color: #333333;
+}
+.city-autocomplete{
+    z-index: 100;
+}
+.city-modal .modal-inner-wrap{
+    min-height: 228px;
+    overflow: visible;
+}

@@ -1,0 +1,73 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+
+?>
+<div class="geolocation" id="geolocation" data-bind="scope: 'section'">
+    <div class="icon">
+        <img src="https://www.vodafone.ua/shop/static/version1673559851/frontend/Perspective/Vodafone/uk_UA/images/svgUpd/geolocationHead.svg">
+    </div>
+    <span id="ip" data-bind="text: customsection().customer_city"></span>
+</div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "section": {
+                        "component": "Samohina_CityByIp/js/section"
+                    }
+                }
+            }
+        }
+    }
+</script>
+<div id="modal-geolocation" style="display: none">
+    <div class="modal-body-content">
+        <h2><?= $block->escapeHtml(__('Choose your city')) ?></h2>
+        <div>
+            <div class="control">
+                <input id="input-city"
+                       data-mage-init='{
+                            "Samohina_CityByIp/js/cityAutocomplate": {
+                                "url": "rest/V1/novaposhta/city",
+                                 "formSelector": "#search_mini_form",
+                                "destinationSelector": "#city_autocomplete",
+                                 "minSearchLength": "3"
+                            }
+                        }'
+                       type="text"
+
+
+                       class="input-text"
+                       role="combobox"
+                       aria-haspopup="false"
+                       aria-autocomplete="both"
+                       autocomplete="off"
+                />
+                <div id="city_autocomplete" class="city-autocomplete"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    require([
+        "jquery",
+        "Magento_Ui/js/modal/modal"
+    ],function($, modal) {
+
+        var options = {
+            type: 'popup',
+            responsive: true,
+            modalClass: 'city-modal',
+            buttons: []
+        };
+
+        var popup = modal(options, $('#modal-geolocation'));
+        $("#geolocation").click(function() {
+            $('#modal-geolocation').modal('openModal');
+        });
+    });
+</script>
+
+
