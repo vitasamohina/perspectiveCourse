@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Magento\Review\Controller\Product\Post" type="Samohina\Reviews\Controller\Product\PostReview"/>
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="commande_reviewsaddstores" xsi:type="object">Samohina\Reviews\Console\Command\ReviewsAddStores</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
